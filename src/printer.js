@@ -258,6 +258,10 @@ function renderLine(line, x, y, pdfKitDoc) {
 
 		pdfKitDoc.fill(inline.color || 'black');
 
+    if (inline.link) {
+      pdfKitDoc.link(x+inline.x, y, inline.width, inline.height, inline.link);
+    }
+
 		pdfKitDoc.save();
 		pdfKitDoc.transform(1, 0, 0, -1, 0, pdfKitDoc.page.height);
 
