@@ -5,19 +5,6 @@
 
 var PdfWrapper = function (fonts) {
 
-//  var defaultClientFonts = {
-//    Montserrat: {
-//      normal: 'assets/fonts/montserrat/Montserrat-Regular.ttf',
-//      bold: 'assets/fonts/montserrat/Montserrat-Bold.ttf'
-//    },
-//    Helvetica: {
-//      normal: 'assets/fonts/helvetica/HelveticaWorld-Regular.ttf',
-//      bold: 'assets/fonts/helvetica/HelveticaWorld-Bold.ttf',
-//      italics: 'assets/fonts/helvetica/HelveticaWorld-Italic.ttf',
-//      bolditalics: 'assets/fonts/helvetica/HelveticaWorld-Italic.ttf'
-//    }
-//  };
-
   var defaultClientFonts = {
     Roboto: {
       normal: 'fonts/Roboto-Regular.ttf',
@@ -27,21 +14,17 @@ var PdfWrapper = function (fonts) {
     }
   };
 
-  var PdfPrinter = require('../src/printer');
+  var PdfPrinter = require('../printer');
   var fs = require('fs');
-  var _ = require('lodash')
-
-//  var PdfMake = require('pdfmake');
+  var _ = require('lodash');
 
   var Document = function (docDefinition) {
     this.docDefinition = docDefinition;
-    this.fonts = fonts;
+    this.fonts = fonts || defaultClientFonts;
   };
 
   Document.prototype._createDoc = function (options, callback) {
     var printer = new PdfPrinter(this.fonts);
-//    var printer = new PdfMake();
-//    printer.fs.bindFS(this.vfs);
 
     var doc = printer.createPdfKitDocument(this.docDefinition, this.fonts, options);
     var chunks = [];

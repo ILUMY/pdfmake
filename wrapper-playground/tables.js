@@ -5,7 +5,7 @@
 'use strict';
 
 var path = require("path");
-var PdfWrapper = require('../libs/PdfWrapper');
+var PdfWrapper = require('../src/node-extensions/pdfWrapper');
 var _ = require('lodash');
 
 function mp(relFontPath) {
