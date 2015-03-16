@@ -1,8 +1,8 @@
 {
-  "name": "pdfmake",
-  "version": "0.1.17",
+  "name": "pdfwrapper",
+  "version": "0.1",
   "description": "Client/server side PDF printing in pure JavaScript",
-  "main": "src/printer.js",
+  "main": "src/node-extensions/pdfWrapper.js",
   "directories": {
     "test": "tests"
   },
