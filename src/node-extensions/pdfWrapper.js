@@ -167,6 +167,10 @@ var PdfWrapper = function (fonts) {
 		docDefinition.pageMargins = obj;
 	};
 
+	this.defaultStyle = function (obj) {
+		docDefinition.defaultStyle = obj;
+	};
+
 	this.setStyles = function (styles, isOverride) {
 		if (isOverride) {
 			docDefinition.styles = styles;
