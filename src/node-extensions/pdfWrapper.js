@@ -151,6 +151,10 @@ var PdfWrapper = function (fonts) {
     docDefinition.footer = footer;
   };
 
+  this.setHeader = function (header) {
+    docDefinition.header = header;
+  };
+
   this.setStyles = function (styles, isOverride) {
     if (isOverride) {
       docDefinition.styles = styles;
