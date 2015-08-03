@@ -1,6 +1,6 @@
 {
   "name": "pdfwrapper",
-  "version": "0.1.17",
+  "version": "0.1.18",
   "description": "Client/server side PDF printing in pure JavaScript",
   "main": "src/node-extensions/pdfWrapper.js",
   "directories": {

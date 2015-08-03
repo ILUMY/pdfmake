@@ -122,7 +122,7 @@ var PdfWrapper = function (fonts) {
 		this._createDoc(options, function (buffer) {
 			var filename = options.saveToFile || _.uniqueId('pdf_');
 			fs.writeFileSync(filename, buffer);
-			return filename;
+			return cb(filename);
 		});
 	};
 
@@ -146,6 +146,10 @@ var PdfWrapper = function (fonts) {
 			docDefinition.content.push(content)
 		}
 	};
+
+	this.setBackground = function (obj){
+		docDefinition.background = obj;
+	}
 
 	this.setFooter = function (obj) {
 		docDefinition.footer = obj;
